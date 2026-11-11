@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#d90429">
+<title>GS Interior & Exteriors | Aluminium Works</title>
+<style>
+:root{--red:#d90429;--dark:#111;--ink:#202124;--muted:#666;--light:#f6f6f6;--gold:#ffb703}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+header{background:#101010;color:#fff;position:sticky;top:0;z-index:20;border-bottom:3px solid var(--red)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}.brand img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:10px}.brand span{display:block}.brand small{display:block;color:#bbb;font-size:11px;letter-spacing:2px;margin-top:4px}
+nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}nav a{font-size:13px;color:#eee}nav a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;padding:12px 18px;font-weight:700;cursor:pointer;background:var(--red);color:#fff}.btn.alt{background:#fff;color:#111;border:1px solid #ddd}.btn.dark{background:#111;color:#fff}
+.hero{background:linear-gradient(115deg,rgba(0,0,0,.9),rgba(30,0,8,.78)),url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85') center/cover;color:#fff;padding:100px 0 90px}
+.eyebrow{color:var(--gold);font-weight:800;letter-spacing:3px;font-size:12px}.hero h1{font-size:clamp(36px,6vw,68px);line-height:1.04;max-width:760px;margin:16px 0}.hero p{color:#ddd;max-width:650px;line-height:1.7;font-size:17px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+section{padding:72px 0}.section-head{text-align:center;margin-bottom:34px}.section-head .eyebrow{color:var(--red)}h2{font-size:clamp(27px,4vw,40px);margin:10px 0}.section-head p{color:var(--muted);max-width:680px;margin:0 auto;line-height:1.6}
+.services{background:var(--light)}.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service{background:#fff;padding:24px;border-radius:14px;border:1px solid #eee;box-shadow:0 8px 24px #00000008}.service b{display:block;margin:10px 0}.service p{color:var(--muted);font-size:13px;line-height:1.55;margin:0}.icon{width:42px;height:42px;display:grid;place-items:center;background:#fff0f2;border-radius:11px;font-size:22px}
+.category-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:24px 0 30px}.tab{border:1px solid #ddd;background:#fff;border-radius:30px;padding:10px 17px;cursor:pointer;font-weight:700}.tab.active,.tab:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.project{border:1px solid #eee;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 26px #0000000a}.thumb{height:210px;background:linear-gradient(135deg,#333,#777);position:relative;display:grid;place-items:center;color:#fff;text-align:center;padding:15px}.thumb:after{content:"▶";position:absolute;right:15px;bottom:15px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--red);box-shadow:0 4px 15px #0005}.thumb span{font-size:13px;letter-spacing:1px;text-transform:uppercase}.project-body{padding:17px}.project-body h3{margin:0 0 7px;font-size:18px}.project-body p{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 13px}.project-body .btn{font-size:12px;padding:10px 13px}
+.note{background:#fff8e6;border-left:4px solid var(--gold);padding:14px 16px;border-radius:8px;color:#5e4a12;font-size:13px;line-height:1.55;margin:24px auto;max-width:900px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.about-panel{background:#111;color:#fff;padding:35px;border-radius:18px}.about-panel p{color:#ddd;line-height:1.7}.check{padding:0;list-style:none;line-height:2.1}.check li:before{content:"✓";color:var(--gold);font-weight:bold;margin-right:10px}
+.contact{background:#111;color:#fff}.contact .section-head p{color:#ccc}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.contact-card{border:1px solid #444;border-radius:13px;padding:23px}.contact-card h3{margin:8px 0}.contact-card p{color:#ccc;font-size:13px;line-height:1.5}
+footer{background:#080808;color:#aaa;text-align:center;padding:22px;font-size:12px}
+.floating{position:fixed;right:18px;bottom:18px;z-index:30;border-radius:50px;box-shadow:0 6px 20px #0004}
+.modal{display:none;position:fixed;inset:0;background:#000b;z-index:50;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modal-box{background:#fff;max-width:440px;width:100%;padding:28px;border-radius:16px;text-align:center}.modal-box h3{margin-top:0}.modal-box p{color:#555;line-height:1.55}.modal-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+@media(max-width:850px){nav{gap:10px}nav a{font-size:12px}.service-grid{grid-template-columns:repeat(2,1fr)}.project-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.nav{padding:10px 0;align-items:flex-start}.brand img{width:48px;height:48px}.brand{font-size:13px}nav{max-width:150px;justify-content:flex-end}nav a{font-size:11px}.hero{padding:75px 0}.service-grid,.project-grid,.about-grid,.contact-grid{grid-template-columns:1fr}section{padding:55px 0}.thumb{height:190px}}
+@media print{header,.hero-actions,.floating,.contact .btn,.category-tabs,.modal{display:none!important}section{padding:25px 0}.project-grid{grid-template-columns:repeat(2,1fr)}body{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+ <a class="brand" href="#home"><img src="assets/gs-logo.png" alt="GS logo"><span>GS INTERIOR & EXTERIORS<small>ALUMINIUM • INTERIORS • EXTERIORS</small></span></a>
+ <nav><a href="#home">Home</a><a href="#interiors">Interiors</a><a href="#exteriors">Exteriors</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="wrap">
+ <div class="eyebrow">DESIGN • FABRICATION • INSTALLATION</div>
+ <h1>Beautiful spaces.<br><span style="color:#ffb703">Strong aluminium work.</span></h1>
+ <p>Welcome to GS Interior & Exteriors. Explore our aluminium interior and exterior work, view project videos, and contact us for your next project.</p>
+ <div class="hero-actions"><a class="btn" href="#interiors">Explore Our Works</a><a class="btn alt" href="https://wa.me/918886456356" target="_blank" rel="noopener">WhatsApp Enquiry</a></div>
+</div></section>
+
+<section class="services" id="interiors"><div class="wrap">
+ <div class="section-head"><div class="eyebrow">OUR SPECIALITY</div><h2>Aluminium Interior Works</h2><p>Custom-made solutions for homes and commercial spaces. Select a category to explore projects.</p></div>
+ <div class="service-grid">
+  <article class="service"><div class="icon">▣</div><b>Aluminium Cupboards</b><p>Bedroom cupboards, sliding-door cupboards, storage cabinets and custom designs.</p></article>
+  <article class="service"><div class="icon">▤</div><b>TV Units</b><p>Modern TV units, wall-mounted units and full-wall TV cabinets.</p></article>
+  <article class="service"><div class="icon">ॐ</div><b>Pooja Rooms</b><p>Custom pooja units, pooja cabinets and devotional spaces.</p></article>
+  <article class="service"><div class="icon">⌂</div><b>Modular Kitchens</b><p>L-shape, U-shape, parallel and customized modular kitchens.</p></article>
+ </div>
+ <div class="category-tabs" id="interiorTabs"></div><div class="project-grid" id="interiorProjects"></div>
+</div></section>
+
+<section id="exteriors"><div class="wrap">
+ <div class="section-head"><div class="eyebrow">BUILT FOR OUTDOORS</div><h2>Exterior Works</h2><p>Functional, durable and stylish exterior fabrication solutions.</p></div>
+ <div class="service-grid">
+  <article class="service"><div class="icon">▥</div><b>Windows</b><p>Sliding, openable and designer windows.</p></article>
+  <article class="service"><div class="icon">⇆</div><b>Sliding Doors</b><p>Aluminium and glass sliding doors.</p></article>
+  <article class="service"><div class="icon">▦</div><b>Iron Grills</b><p>Window safety grills and designer grills.</p></article>
+  <article class="service"><div class="icon">▰</div><b>Gates</b><p>Main gates, designer gates and sliding gates.</p></article>
+  <article class="service"><div class="icon">⌁</div><b>SS Railings</b><p>Stainless-steel staircase, balcony and designer railings.</p></article>
+  <article class="service"><div class="icon">◇</div><b>Glass Steps & Glass Works</b><p>Glass staircases, glass steps, glass railings and partitions.</p></article>
+ </div>
+ <div class="category-tabs" id="exteriorTabs"></div><div class="project-grid" id="exteriorProjects"></div>
+</div></section>
+
+<section id="about" style="background:#f6f6f6"><div class="wrap about-grid">
+ <div><div class="eyebrow">ABOUT OUR BUSINESS</div><h2>GS Interior & Exteriors</h2><p style="line-height:1.75;color:#555">We provide aluminium interior and exterior work solutions with a focus on neat finishing, practical design and customer requirements. Browse our work gallery and contact us to discuss your project.</p><ul class="check"><li>Aluminium interior solutions</li><li>Exterior fabrication works</li><li>Custom designs and project enquiries</li><li>WhatsApp contact support</li></ul></div>
+ <div class="about-panel"><div class="eyebrow">LET'S BUILD YOUR IDEA</div><h2>Have a project in mind?</h2><p>Share your requirements with us on WhatsApp. You can also visit our shop using the map link.</p><a class="btn" href="https://wa.me/918886456356" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap"><div class="section-head"><div class="eyebrow">GET IN TOUCH</div><h2>Contact GS Interior & Exteriors</h2><p>For enquiries, project discussions and shop directions.</p></div>
+ <div class="contact-grid">
+  <div class="contact-card"><div class="icon">☎</div><h3>Call Us</h3><p>8886456356</p><a class="btn" href="tel:+918886456356">Call Now</a></div>
+  <div class="contact-card"><div class="icon">✉</div><h3>WhatsApp</h3><p>Send your project details and photos directly.</p><a class="btn" href="https://wa.me/918886456356" target="_blank" rel="noopener">WhatsApp Us</a></div>
+  <div class="contact-card"><div class="icon">⌖</div><h3>Visit Our Shop</h3><p>Jagapatinagaram, Kirlampudi, Andhra Pradesh 533431</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=GS%20Interior%20and%20Exteriors%2C%20Jagapatinagaram%2C%20Kirlampudi%2C%20Andhra%20Pradesh%20533431" target="_blank" rel="noopener">Get Directions</a></div>
+ </div>
+ <div style="text-align:center;margin-top:28px"><a class="btn alt" href="https://youtube.com/@gsaluminiumculbords" target="_blank" rel="noopener">▶ Visit YouTube Channel</a> <button class="btn alt" onclick="window.print()">Download / Save PDF</button></div>
+</div></section>
+</main>
+<footer>© <span id="year"></span> GS Interior & Exteriors. All rights reserved.</footer>
+<a class="btn floating" href="https://wa.me/918886456356" target="_blank" rel="noopener">WhatsApp</a>
+
+<div class="modal" id="subscribeModal"><div class="modal-box">
+ <h3>Enjoying our project work?</h3><p>Visit and subscribe to the GS Aluminium YouTube channel. Then open the project video when its link is added.</p>
+ <div class="modal-actions"><a class="btn" href="https://youtube.com/@gsaluminiumculbords" target="_blank" rel="noopener">Subscribe / Visit Channel</a><button class="btn dark" id="closeModal">Continue</button></div>
+ <p style="font-size:11px">YouTube subscription cannot be verified or made mandatory by this website.</p>
+</div></div>
+<script>
+const interiorCats=["All","Cupboards","TV Units","Pooja Rooms","Modular Kitchens"];
+const exteriorCats=["All","Windows","Sliding Doors","Iron Grills","Gates","SS Railings","Glass Steps & Glass Works"];
+// Add actual project photos and individual YouTube video URLs later through the connected Admin Panel.
+const projects=[];
+function renderTabs(id,cats,gridId,group){
+ const box=document.getElementById(id); box.innerHTML="";
+ cats.forEach((cat,i)=>{const b=document.createElement("button");b.className="tab"+(i===0?" active":"");b.textContent=cat;b.onclick=()=>{box.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderProjects(gridId,cat,group)};box.appendChild(b)});
+}
+function renderProjects(gridId,cat,group){
+ const el=document.getElementById(gridId); const list=projects.filter(p=>p.group===group&&(cat==="All"||p.category===cat));
+ if(!list.length){el.innerHTML=`<div class="project" style="grid-column:1/-1;padding:25px;text-align:center"><h3>Project photos coming soon</h3><p style="color:#666">Completed ${group==="interior"?"interior":"exterior"} works will appear here. Add project photos, names and video links when ready.</p><a class="btn" href="https://wa.me/918886456356" target="_blank" rel="noopener">Enquire on WhatsApp</a></div>`;return;}
+ el.innerHTML=list.map((p,i)=>`<article class="project"><div class="thumb" style="${p.photo?`background:url('${p.photo}') center/cover`:''}" data-video="${p.video||''}"><span>${p.title}</span></div><div class="project-body"><h3>${p.title}</h3><p>${p.details||"GS Interior & Exteriors completed project."}</p><button class="btn" onclick="openProject('${(p.video||'').replace(/'/g,"\\'")}')">View Project</button></div></article>`).join("");
+}
+function openProject(url){document.getElementById("subscribeModal").classList.add("show");document.getElementById("closeModal").onclick=()=>{document.getElementById("subscribeModal").classList.remove("show");if(url)window.open(url,"_blank","noopener")};}
+renderTabs("interiorTabs",interiorCats,"interiorProjects","interior");renderTabs("exteriorTabs",exteriorCats,"exteriorProjects","exterior");
+renderProjects("interiorProjects","All","interior");renderProjects("exteriorProjects","All","exterior");
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body></html>
